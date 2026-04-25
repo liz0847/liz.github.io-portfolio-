@@ -4,14 +4,16 @@ body{
   width: 100%;
   height: 100%;
       margin: 0;
-      padding: 10px;
       font-size: 16px;
       font-family: Arial;
+    padding: 10px;
+    overflow-x: hidden;
     }
 
     img {
       max-width: 100%;
       height: auto;
+        
     }
 
 .nav-link{
@@ -26,6 +28,12 @@ body{
         font-size: 24px;
           display: flex;
          flex-wrap: wrap;
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 }
 .container {
             text-align: right;
@@ -36,8 +44,11 @@ body{
       border: 4px solid white; /* Optional border */
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       margin-right: 50px; /* Space from right edge */
-      max-width: 600px;
       margin: auto;
+     width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px;
     }
 
     .container img {
@@ -48,6 +59,7 @@ body{
       max-width: 600px;
       margin: auto;
     }
+
 .h3{
   text-align: right;
 }
@@ -109,6 +121,15 @@ body{
     object-fit: cover;   /* keeps proportions inside the circle */
     border: 3px solid #fff; /* optional white border */
   }
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-box {
+    flex: 1 1 100%;
+}
   .i
     {
     display: flex;
@@ -131,3 +152,26 @@ body{
     opacity: 1;
   }
 }
+@media (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
