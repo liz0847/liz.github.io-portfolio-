@@ -1,176 +1,215 @@
-body{
-  background-color: goldenrod;
-  color: black;
-  width: 100%;
-  height: 100%;
-      margin: 0;
-      font-size: 16px;
-      font-family: Arial;
-    padding: 10px;
-    overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-        
-    }
-
-.nav-link{
- background-color:gold;
-        color: rgb(0, 0, 0);
-        display: flex;
-        text-align: center;
-        padding: 15px;
-        gap: 25px;
-        justify-content: center;
-        font-weight: bolder;
-        font-size: 24px;
-          display: flex;
-         flex-wrap: wrap;
-    * {
+/* ================= RESET ================= */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ================= COLORS ================= */
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --primary: #38bdf8;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
 }
+
+/* ================= BODY ================= */
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+.nav-link {
+    background: #020617;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.nav-link a {
+    color: var(--text);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-link a:hover {
+    color: var(--primary);
+}
+
+/* ================= CONTAINER ================= */
 .container {
-            text-align: right;
-      width: 3in;  /* Passport width */
-      height: 3in; /* Passport height */
-      border-radius: 70%; /* Circle frame */
-      overflow: hidden; /* Hide corners */
-      border: 4px solid white; /* Optional border */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      margin-right: 50px; /* Space from right edge */
-      margin: auto;
-     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
     max-width: 1100px;
     margin: auto;
-    padding: 10px;
-    }
-
-    .container img {
-      justify-content: right;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Keeps image proportionate */
-      max-width: 600px;
-      margin: auto;
-    }
-
-.h3{
-  text-align: right;
 }
-    .deco {
-        display: grid;
-        gap: 10px;
-        padding: 15px;
-        width: 80%;
-        margin: 10px auto;
-        background-color: rgb(238, 238, 209);
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
- 
-}
-    .deco img {
-        width: 90%;
-        height: auto;
-        border-radius: 5px;
-  object-fit: contain;
-    }
-    
-    @media (max-width:800px) {
-        .service-card {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    .speech-bubble{
-      float: center;
-      position: relative;
-    background: #111; /* black bubble */
-    color: white;
-    padding: 20px 25px;
-    border-radius: 20px;
-    width: 350px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
 
-  /* Create the tail */
-  .speech-bubble::after {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    left: 40px;
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-top-color: #111; /* match bubble color */
-  }
-    .shape,.rog {
+/* ================= PROFILE IMAGE ================= */
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* ================= CIRCLE BOX ================= */
+.shape {
+    width: 120px;
+    height: 120px;
+    background: var(--card);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px; /* space between image and text */
-  }
+    justify-content: center;
+    margin-top: 15px;
+    transition: 0.3s;
+}
 
-  .shape img {
-    width: 100px;        /* passport-size look */
-    height: 100px;
-    border-radius: 50%;  /* makes the image circular */
-    object-fit: cover;   /* keeps proportions inside the circle */
-    border: 3px solid #fff; /* optional white border */
-  }
+.shape:hover {
+    transform: scale(1.1);
+}
+
+/* IMAGE INSIDE CIRCLE */
+.shape img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+/* TEXT INSIDE CIRCLE */
+.shape p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ================= SKILLS ================= */
 .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px;
 }
 
 .skill-box {
-    flex: 1 1 100%;
-}
-  .i
-    {
-    display: flex;
-    margin-top: 10px;
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    color: #000;
-  }
-  
-  .pop,.deco {
-  animation: popIn 0.8s ease-out;
+    transition: 0.3s;
+    border: 1px solid transparent;
 }
 
-@keyframes popIn {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+.skill-box:hover {
+    border: 1px solid var(--primary);
+    transform: translateY(-5px);
 }
+
+/* ================= DECOR GRID ================= */
+.deco {
+    display: grid;
+    gap: 10px;
+    padding: 15px;
+    width: 80%;
+    margin: 20px auto;
+    background: var(--card);
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+}
+
+.deco img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* ================= SPEECH BUBBLE ================= */
+.speech-bubble {
+    position: relative;
+    background: var(--card);
+    color: var(--text);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 300px;
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+    border: 15px solid transparent;
+    border-top-color: var(--card);
+}
+
+/* ================= ANIMATION ================= */
+.container, .skills {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 22px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    .skills {
+    .nav-link {
         flex-direction: column;
+        gap: 10px;
+        font-size: 16px;
     }
 
-    img {
-        width: 100%;
-        height: auto;
+    .profile img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .shape {
+        width: 90px;
+        height: 90px;
+    }
+
+    .shape img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .shape p {
+        font-size: 10px;
+    }
+
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+    p { font-size: 14px; }
+}
+
+/* ================= DESKTOP ================= */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
     }
 }
