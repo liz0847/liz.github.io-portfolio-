@@ -138,23 +138,16 @@ body {
 }
 
 /* ================= SPEECH BUBBLE ================= */
-.speech-bubble {
-    position: relative;
-    background: var(--card);
-    color: var(--text);
-    padding: 20px;
-    border-radius: 20px;
-    max-width: 300px;
-}
-
-.speech-bubble::after {
-    content: "";
-    position: absolute;
-    bottom: -15px;
-    left: 30px;
-    border: 15px solid transparent;
-    border-top-color: var(--card);
-}
+.speech-bubble{ float: center; position: relative; background: #111;
+               /* black bubble */ color: white; 
+               padding: 20px 25px; border-radius: 20px; 
+               width: 350px; font-size: 16px; 
+               line-height: 1.5; } /* Create the tail */
+.speech-bubble::after { content: ""; position: absolute
+                       ; bottom: -20px; left: 40px; 
+                       width: 0; height: 0; 
+                       border: 20px solid transparent; 
+                       border-top-color: #111; /* match bubble color */ }
 
 /* ================= ANIMATION ================= */
 .container, .skills {
